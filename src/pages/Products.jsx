@@ -1,8 +1,10 @@
-import React from 'react'
+import Filter from '../components/products/Filter'
+import ProductGallery from '../components/products/ProductGallery/ProductGallery'
 const Products = () => {
   return (
     <div>
-      PRODUCTS
+      <Filter/>
+      <ProductGallery/>
     </div>
   )
 }
