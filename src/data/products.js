@@ -264,7 +264,7 @@ export const sampleProducts = [
     description:
       "Teclado mecánico gaming con switches Cherry MX Speed e iluminación RGB por tecla",
     image:
-      "https://images.unsplash.com/photo-1541140532154-b024d705b90a?w=400&h=300&fit=crop",
+      "https://assets.corsair.com/image/upload/c_pad,q_85,h_1100,w_1100,f_auto/products/Gaming-Keyboards/CH-9127014-ES/Gallery/CH-9127014-ES-K95_BLK_05.webp",
     category: "Gaming",
     rating: 5,
     reviews: 934,
@@ -278,7 +278,7 @@ export const sampleProducts = [
     description:
       "Localizadores Bluetooth para encontrar objetos perdidos con la red Buscar de Apple",
     image:
-      "https://images.unsplash.com/photo-1635870664257-37b01a5b1647?w=400&h=300&fit=crop",
+      "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airtag-4pack-select-202104?wid=940&hei=1112&fmt=png-alpha&.v=QVI2eUgvdU1qT1VRdEZUOXVUVHgrZGRuSU1iZUhmQXgzaVlYalNFUEhFVmZhS1VCT1k0VG5wendIdURyT0d4ZVlPV2JwRFRsaGFkTWtXWUxZemFmbFNleDhnU2svblVGV2pwSXQ4RWM2bTA",
     category: "Electronics",
     rating: 4,
     reviews: 1567,
@@ -289,8 +289,7 @@ export const sampleProducts = [
     price: 749.99,
     description:
       "Aspiradora inalámbrica con láser detector de polvo y filtración avanzada",
-    image:
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
+    image: "https://m.media-amazon.com/images/I/61Du+U5EwqL._AC_SL1001_.jpg",
     category: "Home",
     rating: 5,
     reviews: 2156,
@@ -329,8 +328,7 @@ export const sampleProducts = [
     discount: 19,
     description:
       "Freidora de aire con 6 funciones de cocción inteligente y control por app",
-    image:
-      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop",
+    image: "https://m.media-amazon.com/images/I/81-MaAcbJQL._AC_SL1500_.jpg",
     category: "Home",
     rating: 4,
     reviews: 2987,
