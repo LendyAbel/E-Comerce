@@ -1,10 +1,9 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
 
 import { ShoppingCart } from "lucide-react";
 
-const CartIcon = () => {
-  const [cartCount, setCartCount] = useState(3);
+const CartIcon = ({cartList=[]}) => {
+  const cartCount = cartList.length
   return (
     <motion.button
       whileTap={{ scale: 0.95 }}

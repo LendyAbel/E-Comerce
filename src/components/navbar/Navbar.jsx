@@ -21,7 +21,7 @@ const navbarAnimation = {
   transition: { duration: 0.3 },
 };
 
-const Navbar = () => {
+const Navbar = ({cartList}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -42,7 +42,7 @@ const Navbar = () => {
         <div className='hidden md:block'>
           <UserIcon/>
         </div>
-        <CartIcon />
+        <CartIcon cartList={cartList} />
       </div>
     </motion.nav>
   );
