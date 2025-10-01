@@ -4,10 +4,14 @@ import { ShoppingCart } from "lucide-react";
 
 const CartIcon = ({cartList=[]}) => {
   const cartCount = cartList.length
+  const handleClick = () => {
+    console.log("Cart clicked");
+  }
   return (
     <motion.button
       whileTap={{ scale: 0.95 }}
       className="relative flex flex-col items-center p-2 text-gray-600 hover:text-blue-600"
+      onClick={handleClick}
     >
       <ShoppingCart size={20} />
       <span className="mt-1 hidden text-xs md:block">Carrito</span>
