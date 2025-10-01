@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
 
 import { ShoppingCart } from "lucide-react";
+import { useContext } from 'react'
+import { ShoppingCartContext } from '../../../context/context'
 
-const CartIcon = ({cartList=[]}) => {
+const CartIcon = () => {
+  const {cartList }= useContext(ShoppingCartContext)
   const cartCount = cartList.length
   const handleClick = () => {
     console.log("Cart clicked");

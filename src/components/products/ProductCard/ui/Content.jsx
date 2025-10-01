@@ -1,7 +1,10 @@
 import { motion } from "motion/react";
 import { Heart, ShoppingCart, Star } from "lucide-react";
+import { useContext } from "react";
+import { ShoppingCartContext } from "../../../../context/context";
 
-const Content = ({ product, setCartList }) => {
+const Content = ({ product }) => {
+  const { setCartList } = useContext(ShoppingCartContext);
   const handleAddToCartClick = (e) => {
     e.stopPropagation();
     setCartList((prev) => [...prev, product]);

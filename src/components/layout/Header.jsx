@@ -1,9 +1,9 @@
 import Navbar from "../navbar/Navbar";
 
-const Header = ({ children, cartList }) => {
+const Header = ({ children }) => {
   return (
     <div>
-      <Navbar cartList={cartList} />
+      <Navbar/>
       {children}
     </div>
   );

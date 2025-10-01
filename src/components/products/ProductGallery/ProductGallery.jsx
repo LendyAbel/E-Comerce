@@ -10,7 +10,6 @@ const ProductGallery = ({
   title = "Products",
   loading = false,
   products = [],
-  setCartList
 }) => {
   if (loading) return <LoadingGallery title={title} />;
 
@@ -78,7 +77,7 @@ const ProductGallery = ({
               ease: "easeOut",
             }}
           >
-            <ProductCard product={product} setCartList={setCartList} />
+            <ProductCard product={product}  />
           </motion.div>
         ))}
       </motion.div>
