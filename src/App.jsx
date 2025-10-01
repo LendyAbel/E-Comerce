@@ -10,12 +10,15 @@ import { useState } from 'react'
 function App() {
   const [productList, setProductList] = useState(products)
   const [cartList, setCartList] = useState([])
+
+  console.log(cartList)
+  
   return (
     <div>
       <Header cartList={cartList}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/products" element={<Products productList={productList} />} />
+          <Route path="/products" element={<Products productList={productList} setCartList={setCartList}/>} />
         </Routes>
       </Header>
     </div>

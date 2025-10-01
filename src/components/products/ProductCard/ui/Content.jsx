@@ -1,11 +1,12 @@
 import { motion } from "motion/react";
 import { Heart, ShoppingCart, Star } from "lucide-react";
 
-const Content = ({product}) => {
-    const handleAddToCartClick = (e) => {
-      e.stopPropagation();
-      console.log(`Product ${product.name} added to cart`);
-    };
+const Content = ({ product, setCartList }) => {
+  const handleAddToCartClick = (e) => {
+    e.stopPropagation();
+    setCartList((prev) => [...prev, product]);
+    console.log(`Product ${product.name} added to cart`);
+  };
   return (
     <div className="flex flex-1 flex-col p-4">
       {/* Product Name */}

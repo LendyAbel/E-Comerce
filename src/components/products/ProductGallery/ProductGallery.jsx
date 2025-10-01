@@ -10,6 +10,7 @@ const ProductGallery = ({
   title = "Products",
   loading = false,
   products = [],
+  setCartList
 }) => {
   if (loading) return <LoadingGallery title={title} />;
 
@@ -24,9 +25,9 @@ const ProductGallery = ({
 
   const hasMore = productsToShow < products.length;
 
-  const productsSlice = ()=>{
-    return products.slice(0, productsToShow)
-  }
+  const productsSlice = () => {
+    return products.slice(0, productsToShow);
+  };
 
   return (
     <div className="mx-auto w-full max-w-7xl px-4 py-8">
@@ -77,7 +78,7 @@ const ProductGallery = ({
               ease: "easeOut",
             }}
           >
-            <ProductCard product={product} />
+            <ProductCard product={product} setCartList={setCartList} />
           </motion.div>
         ))}
       </motion.div>

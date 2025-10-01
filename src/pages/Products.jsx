@@ -1,9 +1,9 @@
 import ProductGallery from '../components/products/ProductGallery/ProductGallery'
-const Products = ({productList}) => {
+const Products = ({productList, setCartList}) => {
   return (
     <div>
       
-      <ProductGallery products={productList}/>
+      <ProductGallery products={productList} setCartList={setCartList}/>
     </div>
   )
 }
