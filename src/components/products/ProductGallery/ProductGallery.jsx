@@ -1,15 +1,32 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 
+import Filter from "../Filter";
 import ProductCard from "../ProductCard/ProductCard";
 import LoadingGallery from "./ui/LoadingGallery";
 import EmptyGallery from "./ui/EmptyGallery";
 
-import { sampleProducts as products } from "../../../data/products";
-
-const ProductGallery = ({ title = "Products", loading = false }) => {
+const ProductGallery = ({
+  title = "Products",
+  loading = false,
+  products = [],
+}) => {
   if (loading) return <LoadingGallery title={title} />;
 
   if (!products.length) return <EmptyGallery />;
+
+  const [productsToShow, setProductsToShow] = useState(5);
+  const productsPerLoad = 5;
+
+  const loadMoreProducts = () => {
+    setProductsToShow((prev) => prev + productsPerLoad);
+  };
+
+  const hasMore = productsToShow < products.length;
+
+  const productsSlice = ()=>{
+    return products.slice(0, productsToShow)
+  }
 
   return (
     <div className="mx-auto w-full max-w-7xl px-4 py-8">
@@ -32,12 +49,13 @@ const ProductGallery = ({ title = "Products", loading = false }) => {
         className="mb-6 flex items-center justify-between"
       >
         <p className="text-muted-foreground text-sm">
-          Showing {products.length} product{products.length !== 1 ? "s" : ""}
+          Showing {productsSlice().length} product
+          {productsSlice().length !== 1 ? "s" : ""}
         </p>
 
         {/* Optional: Sort/Filter controls could go here */}
         <div className="flex items-center gap-2">
-          {/* Placeholder for future sort/filter buttons */}
+          <Filter />
         </div>
       </motion.div>
 
@@ -48,7 +66,7 @@ const ProductGallery = ({ title = "Products", loading = false }) => {
         transition={{ delay: 0.2 }}
         className="grid grid-cols-1 justify-items-center gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
       >
-        {products.map((product, index) => (
+        {productsSlice().map((product, index) => (
           <motion.div
             key={product.id || index}
             initial={{ opacity: 0, y: 20 }}
@@ -65,7 +83,7 @@ const ProductGallery = ({ title = "Products", loading = false }) => {
       </motion.div>
 
       {/* Load More Button (optional) */}
-      {products.length > 0 && products.length % 12 === 0 && (
+      {hasMore && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -76,6 +94,7 @@ const ProductGallery = ({ title = "Products", loading = false }) => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="bg-primary text-primary-foreground hover:bg-secondary rounded-lg px-8 py-3 font-medium shadow-sm transition-all duration-300 hover:shadow-md"
+            onClick={loadMoreProducts}
           >
             Load More Products
           </motion.button>

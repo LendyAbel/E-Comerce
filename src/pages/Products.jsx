@@ -1,10 +1,9 @@
-import Filter from '../components/products/Filter'
 import ProductGallery from '../components/products/ProductGallery/ProductGallery'
-const Products = () => {
+const Products = ({productList}) => {
   return (
     <div>
-      <Filter/>
-      <ProductGallery/>
+      
+      <ProductGallery products={productList}/>
     </div>
   )
 }
