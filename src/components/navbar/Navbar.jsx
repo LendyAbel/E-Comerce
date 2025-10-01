@@ -36,7 +36,7 @@ const Navbar = () => {
         </div>
         <MenuButton isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} />
         <AnimatePresence>
-          {isMenuOpen && <MenuMobile menuItems={menuItems} />}
+          {isMenuOpen && <MenuMobile menuItems={menuItems} setIsMenuOpen={setIsMenuOpen} />}
         </AnimatePresence>
         <SearchBar />
         <div className='hidden md:block'>

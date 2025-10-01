@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 
 import { User } from "lucide-react";
+import { NavLink } from "react-router";
 
-const MenuMobile = ({ menuItems }) => {
+const MenuMobile = ({ menuItems, setIsMenuOpen }) => {
   return (
     <motion.div
       initial={{ opacity: 0, height: 0 }}
@@ -13,16 +14,19 @@ const MenuMobile = ({ menuItems }) => {
     >
       <div className="space-y-1 px-2 pt-2 pb-3">
         {menuItems.map((item, index) => (
-          <motion.a
+          <motion.div
             key={item.name}
             href={item.haref}
             initial={{ x: -20, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: index * 0.1 }}
             className="block rounded-md px-3 py-2 font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-blue-600"
+            onClick={() => setIsMenuOpen(false)}
           >
-            {item.name}
-          </motion.a>
+            <NavLink to={item.href}>
+              <span>{item.name}</span>
+            </NavLink>
+          </motion.div>
         ))}
       </div>
       <div className="flex items-center justify-around border-t border-gray-200 pt-2">

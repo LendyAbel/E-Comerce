@@ -37,12 +37,6 @@ const MenuDesktop = ({ menuItems }) => {
             className="flex items-center space-x-1 py-2 font-medium text-gray-700 transition-colors duration-200 hover:text-blue-600"
           >
             <span>{item.name}</span>
-            {item.hasSubmenu && (
-              <ChevronDown
-                size={16}
-                className="transition-transform duration-200 group-hover:rotate-180"
-              />
-            )}
           </NavLink>
           <ActiveIndicator href={item.href} />
         </motion.div>
